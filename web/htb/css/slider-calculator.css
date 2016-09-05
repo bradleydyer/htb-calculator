@@ -1,0 +1,250 @@
+#block-helptobuycalculator-helptobuycalculator {
+    background-color: white;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.htb-calc {
+    position: relative;
+}
+
+.htb-calc .inset-header {
+    padding: 10px 0 10px 0;
+}
+
+.htb-calc .sliders .inset {
+    padding: 15px 20px 0 20px;
+}
+
+.htb-calc .homes-in-budget .inset {
+    padding: 15px 10px 18px 10px;
+}
+
+.htb-calc .inset {
+    padding: 15px 20px 20px 20px;
+}
+
+.fill-color {
+    background-color: #441a66;
+}
+
+.key-line {
+    border: 1px solid #441a66;
+}
+
+.htb-calc h3 {
+    margin-bottom: 0;
+    font-size: 23px;
+    color: white;
+}
+
+.htb-calc .header {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.htb-calc .header .logo {
+    margin-bottom: 10px;
+}
+
+.htb-calc .sliders {
+    text-align: left;
+}
+
+.htb-calc .field {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.htb-calc .field.with-info-bubble label {
+    padding-right: 30px;
+}
+
+.htb-calc label {
+    font-weight: normal;
+    line-height: 20px;
+    color: #622289;
+    margin-bottom: 10px;
+}
+
+.htb-calc .info-bubble {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.htb-calc input {
+    width: 100%;
+    color: #622289;
+    padding: 4px 5px 4px 8px;
+    margin-bottom: 7px;
+}
+
+.htb-calc .field-ranges {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.htb-calc .field-ranges li {
+    float: left;
+    display: inline-block;
+    font-size: 10px;
+}
+
+.htb-calc .field-ranges li.min {
+    padding-top: 4px;
+    width: 28%;
+}
+
+.htb-calc .field-ranges li.value {
+    text-align: center;
+    color: #622289;
+    font-size: 16px;
+    width: 44%;
+}
+
+.htb-calc .field-ranges li.max {
+    padding-top: 4px;
+    text-align: right;
+    width: 28%;
+}
+
+.htb-calc .slider {
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-bottom: 18px;
+    margin-top: 10px; /* should this margin be on the label? */
+}
+
+.htb-calc .results .problem {
+    font-size: 14px;
+    color: #e90506;
+    margin-bottom: 12px;
+}
+
+.htb-calc .results h4 {
+    color: #d8cfca;
+    margin-bottom: 2px;
+}
+
+.htb-calc .results p.result {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.htb-calc .homes-in-budget h3 {
+    color: #622289;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.htb-calc .homes-in-budget h4 {
+    margin-bottom: 6px;
+    font-size: 19px;
+} 
+
+.htb-calc .homes-in-budget h4.with-htb {
+    color: #622289;
+}
+.htb-calc .homes-in-budget p.with-htb {
+    color: #622289;
+    margin-bottom: 10px;
+}
+
+.htb-calc .homes-in-budget h4.without-htb,
+.htb-calc .homes-in-budget p.without-htb {
+    color: #000;
+}
+
+.information-container {
+    background: rgba(255, 255, 255, .9);
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    top: 0;
+}
+
+.info-panel {
+    background-color: #622289;
+    padding: 15px 20px 15px 20px;
+    display: none;
+    margin-top: 100px;
+}
+
+.info-panel h4 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.info-panel p {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.info-panel a.close-panel {
+    font-size: 12px;
+    color: white;
+    text-decoration: underline;
+}
+
+/* Styles for sliders */
+
+.htb-calc .ui-corner-all, 
+.htb-calc .ui-corner-bottom, 
+.htb-calc .ui-corner-left, 
+.htb-calc .ui-corner-bl {
+    border-bottom-left-radius: 0;
+}
+
+.htb-calc .ui-corner-all, 
+.htb-calc .ui-corner-bottom, 
+.htb-calc .ui-corner-right, 
+.htb-calc .ui-corner-br {
+    border-bottom-right-radius: 0;
+}
+
+.htb-calc .ui-corner-all, 
+.htb-calc .ui-corner-top, 
+.htb-calc .ui-corner-right, 
+.htb-calc .ui-corner-tr { 
+    border-top-right-radius: 0 
+}
+.htb-calc .ui-corner-all, 
+.htb-calc .ui-corner-top, 
+.htb-calc .ui-corner-left, 
+.htb-calc .ui-corner-tl { 
+    border-top-left-radius: 0; 
+}
+
+.htb-calc .ui-slider .ui-slider-range {
+    background: none;
+    background-color: #471866;
+}
+
+.htb-calc .slider.ui-widget-content {
+    background: none;
+    background-color: #cbcbcb;
+    border: none;
+}
+
+.htb-calc .slider.ui-slider-horizontal {
+    height: 2px;
+}
+
+.htb-calc .ui-slider .ui-slider-handle{
+    background:url(/htb/images/slider-handle.png) no-repeat; overflow: hidden; 
+    margin-left: -20px;
+    position:absolute;
+    border-style:none; 
+    width: 37px; 
+    height: 37px; 
+    top: -18px;
+    left: -18px;
+}
+
+/* End of Styles for sliders */
