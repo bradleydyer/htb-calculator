@@ -2,7 +2,7 @@
     <div class="htb-calc">
         <div class="header fill-color">
             <div class="inset-header">
-                <img src="htb/images/help-to-buy-logo.png" class="logo" alt="Help to Buy logo" />
+                <img ng-src="{{ imagePath }}/help-to-buy-logo.png" class="logo" alt="Help to Buy logo" />
                 <h3>Help to Buy Calculator</h3>
             </div>
         </div>
@@ -10,18 +10,18 @@
             <div class="inset">
                 <div class="field with-info-bubble">
                     <label for="input-deposit">How much deposit do you have (&pound;)?</label>
-                    <img src="htb/images/information-bubble.png" class="info-bubble" alt="More information icon" data-info-target="information-deposit" />
+                    <img ng-src="{{ imagePath }}/information-bubble.png" class="info-bubble" alt="More information icon" data-info-target="information-deposit" />
                     <div class="slider mortgage-deposit"></div>
                     <ul class="field-ranges clearfix">
                         <li class="min">Min. &pound;2.5k</li>
-                        <li class="value">{{ deposit }}</li>
+                        <li class="value">&pound;{{ deposit | number:0 }}</li>
                         <li class="max">Max. &pound;180k</li>
                     </ul>
                 </div>
 
                 <div class="field with-info-bubble">
                     <label>What is your mortage interest rate (%)?</label>
-                    <img src="htb/images/information-bubble.png" class="info-bubble" alt="More information icon" data-info-target="information-mortgage-rate" />
+                    <img ng-src="{{ imagePath }}/information-bubble.png" class="info-bubble" alt="More information icon" data-info-target="information-mortgage-rate" />
                     <div class="slider mortgage-interest-rate"></div>
                     <ul class="field-ranges clearfix">
                         <li class="min">Min. 2.00%</li>
@@ -42,11 +42,11 @@
 
                 <div class="field with-info-bubble">
                     <label>How much do you want to repay each month (&pound;)?</label>
-                    <img src="htb/images/information-bubble.png" class="info-bubble" alt="More information icon" data-info-target="information-repay" />
+                    <img ng-src="{{ imagePath }}/information-bubble.png" class="info-bubble" alt="More information icon" data-info-target="information-repay" />
                     <div class="slider mortgage-monthly-repayment"></div>
                     <ul class="field-ranges clearfix">
                         <li class="min">Min. &pound;{{ minRepayment }}</li>
-                        <li class="value">&pound;{{ repayment }}</li>
+                        <li class="value">&pound;{{ repayment | number:0 }}</li>
                         <li class="max">Max. &pound;{{ maxRepayment }}</li>
                     </ul>
                 </div>
@@ -56,16 +56,16 @@
         <div class="results fill-color">
             <div class="inset">
                 <h3>Your results</h3>
-                <p class="problem">Your deposit has to be a minimum of 5% for HtB. Please alter your deposit amount or monthly payments.</p>
+                <p class="problem" ng-if="getDepositAsPercentage() < 5">Your deposit has to be a minimum of 5% for HtB. Please alter your deposit amount or monthly payments.</p>
 
                 <h4>Your deposit</h4>
-                <p class="result deposit"><span class="value">&pound;{{ deposit }}</span> / <span class="percentage">{{ getDepositAsPercentage() }}%</span></p>
+                <p class="result deposit"><span class="value">&pound;{{ deposit | number:0 }}</span> / <span class="percentage">{{ getDepositAsPercentage() }}%</span></p>
 
                 <h4>Help to Buy London loan</h4>
-                <p class="result htb-loan"><span class="value">&pound;{{ equityLoan }}</span> / <span class="percentage">{{ getEquityLoanAsPercentage() }}</span>%</p>
+                <p class="result htb-loan"><span class="value">&pound;{{ equityLoan | number:0 }}</span> / <span class="percentage">{{ getEquityLoanAsPercentage() }}</span>%</p>
 
                 <h4>Your mortgage</h4>
-                <p class="result mortage"><span class="value">&pound;{{ principal }}</span> / <span class="percentage">{{ getPrincipalAsPercentage() }}</span>%</p>
+                <p class="result mortage"><span class="value">&pound;{{ principal | number:0 }}</span> / <span class="percentage">{{ getPrincipalAsPercentage() }}</span>%</p>
             </div>
         </div>
 
@@ -73,9 +73,9 @@
             <div class="inset">
                 <h3>Homes within your budget</h3>
                 <h4 class="with-htb">With Help to Buy London</h4>
-                <p class="with-htb">&pound;{{ getTotalWithHelpToBuy() }}</p>
+                <p class="with-htb">&pound;{{ ( getTotalWithHelpToBuy() >= marginalCorrection ? maxTotal : getTotalWithHelpToBuy() ) | number:0 }}</p>
                 <h4 class="without-htb">Without Help to Buy London</h4>
-                <p class="without-htb">&pound; {{ getTotalWithoutHelpToBuy() }}</p>
+                <p class="without-htb">&pound; {{ getTotalWithoutHelpToBuy() | number:0 }}</p>
             </div>
         </div>
 
