@@ -4,17 +4,17 @@
  *
  * @author Kris Rybak <kris.rybak@bradleydyer.com>
  */
-htb.controller('SliderCalculatorCtrl', function ($scope) {
-    $scope.maxTotal         = 600000;
-    $scope.marginalCorrection = 599500;
-    $scope.interestRate     = 2.5;
-    $scope.mortgageLenght   = 25;
-    $scope.repayment        = 0;
-    $scope.minRepayment     = 0;
-    $scope.maxRepayment     = 0;
-    $scope.deposit          = 30000;
-    $scope.equityLoan       = 0;
-    $scope.principal        = 0;
+htb.controller('SliderCalculatorCtrl', function($scope) {
+    $scope.maxTotal             = 600000;
+    $scope.marginalCorrection   = 599500;
+    $scope.interestRate         = 2.5;
+    $scope.mortgageLenght       = 25;
+    $scope.repayment            = 0;
+    $scope.minRepayment         = 0;
+    $scope.maxRepayment         = 0;
+    $scope.deposit              = 30000;
+    $scope.equityLoan           = 0;
+    $scope.principal            = 0;
 
     $scope.getDepositAsPercentage = function() {
         return parseFloat(($scope.deposit * 100 / ($scope.deposit + $scope.equityLoan + $scope.principal)).toFixed(1));
