@@ -1,0 +1,278 @@
+/*!
+* Main Style.css file
+*/
+/*!
+* Including all the sub scss files.
+*/
+/* Colour Palette
+------------------------------------------------------------------------------------------------------ */
+/* #HTBGreen */
+/* #White */
+/* #Black */
+/* #Red */
+/* #Grey */
+/* #GreyLight */
+/* Colour Palette [END]
+------------------------------------------------------------------------------------------------------ */
+/* Base
+------------------------------------------------------------------------------------------------------ */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: normal;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Base [END]
+------------------------------------------------------------------------------------------------------ */
+/* HTB Calc Header
+------------------------------------------------------------------------------ */
+.htb-calc .header {
+  background-color: #179997;
+  text-align: center;
+}
+.htb-calc .header .inset {
+  padding: 2rem;
+}
+.htb-calc .header .logo {
+  max-width: 111px;
+  margin-bottom: 1.5rem;
+}
+.htb-calc .header h3 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+/* HTB Calc Header [END]
+------------------------------------------------------------------------------ */
+/* HTB Calc Homes In Budget
+------------------------------------------------------------------------------ */
+.htb-calc .homes-in-budget {
+  background-color: #fff;
+  text-align: center;
+  border-left: 1px solid #179997;
+  border-right: 1px solid #179997;
+  border-bottom: 1px solid #179997;
+}
+.htb-calc .homes-in-budget .inset {
+  padding: 2rem 2rem 1rem;
+}
+.htb-calc .homes-in-budget h3 {
+  font-size: 1.8rem;
+}
+.htb-calc .homes-in-budget h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: gray;
+}
+.htb-calc .homes-in-budget p.with-htb,
+.htb-calc .homes-in-budget p.without-htb {
+  font-size: 2rem;
+  margin-top: 0;
+}
+.htb-calc .homes-in-budget .with-htb {
+  color: #179997;
+}
+
+/* HTB Calc Homes In Budget [END]
+------------------------------------------------------------------------------ */
+/* HTB Calc Results
+------------------------------------------------------------------------------ */
+.htb-calc .results {
+  background-color: #179997;
+  color: #fff;
+  text-align: center;
+}
+.htb-calc .results .inset {
+  padding: 2rem 2rem 0;
+  overflow: auto;
+}
+.htb-calc .results h3 {
+  font-size: 1.8rem;
+}
+.htb-calc .results h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #dcf0ef;
+}
+.htb-calc .results .result {
+  font-size: 2rem;
+  margin-top: 0;
+}
+.htb-calc .results .problem {
+  background-color: #fff;
+  color: #B8227A;
+  font-size: 1.6rem;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+/* HTB Calc Results [END]
+------------------------------------------------------------------------------ */
+/* HTB Calc Sliders
+------------------------------------------------------------------------------ */
+.htb-calc .sliders {
+  background-color: #fff;
+  border-left: 1px solid #179997;
+  border-right: 1px solid #179997;
+  position: relative;
+}
+.htb-calc .sliders .inset {
+  padding: 2rem 2rem 0 2rem;
+  overflow: auto;
+}
+.htb-calc .sliders label {
+  font-size: 1.6rem;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+.htb-calc .sliders .field {
+  position: relative;
+}
+.htb-calc .sliders .field.with-info-bubble label {
+  padding-right: 35px;
+}
+.htb-calc .sliders .field-ranges {
+  padding: 0;
+  overflow: auto;
+  margin-bottom: 2rem;
+}
+.htb-calc .sliders .field-ranges li {
+  float: left;
+  list-style-type: none;
+}
+.htb-calc .sliders .field-ranges li.min {
+  width: 28%;
+  color: #505050;
+  padding-top: 0.5rem;
+}
+.htb-calc .sliders .field-ranges li.value {
+  width: 44%;
+  text-align: center;
+  font-size: 1.6rem;
+  color: #179997;
+}
+.htb-calc .sliders .field-ranges li.max {
+  width: 28%;
+  text-align: right;
+  color: #505050;
+  padding-top: 0.5rem;
+}
+.htb-calc .sliders .info-bubble {
+  width: 28px;
+  height: 28px;
+  background-color: #179997;
+  display: block;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 50%;
+}
+.htb-calc .sliders .info-bubble span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.6rem;
+}
+.htb-calc .sliders .info-bubble:hover {
+  background-color: #505050;
+}
+.htb-calc .sliders .ui-widget-content {
+  background: none;
+  background-color: #cbcbcb;
+  border: none;
+}
+.htb-calc .sliders .ui-slider-horizontal {
+  height: 2px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+.htb-calc .sliders .ui-slider .ui-slider-handle {
+  background: url(/htb/images/slider-handle.png) no-repeat;
+  overflow: hidden;
+  margin-left: -20px;
+  position: absolute;
+  border-style: none;
+  width: 37px;
+  height: 37px;
+  top: -18px;
+  left: -18px;
+  outline: none;
+}
+
+/* HTB Calc Sliders [END]
+------------------------------------------------------------------------------ */
+/* Info Panels
+------------------------------------------------------------------------------ */
+.information-container {
+  background: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100% !important;
+}
+
+.info-panel {
+  background-color: #179997;
+  padding: 2rem;
+  display: none;
+  text-align: center;
+  position: relative;
+  margin-top: 10rem;
+  box-sizing: border-box;
+}
+
+.info-panel h4 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.info-panel p {
+  font-size: 1.3rem;
+  line-height: 1.35;
+  margin-bottom: 2rem;
+  color: #dcf0ef;
+  font-weight: normal;
+}
+
+.info-panel a.close-panel {
+  font-size: 1.3rem;
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Info Panels [END]
+------------------------------------------------------------------------------ */
+/* Slider Calculator Wrapper
+------------------------------------------------------------------------------ */
+.slider-calculator .htb-calc {
+  position: relative;
+}
+
+/* Slider Calculator Wrapper [END]
+------------------------------------------------------------------------------ */

@@ -1,0 +1,40 @@
+/* HTB Calc Homes In Budget
+------------------------------------------------------------------------------ */
+
+.htb-calc{
+
+    .homes-in-budget{
+        background-color: #fff;
+        text-align: center;
+        border-left: 1px solid $brand-one;
+        border-right: 1px solid $brand-one;
+        border-bottom: 1px solid $brand-one;
+
+        .inset{
+            padding: 2rem 2rem 1rem;
+        }
+
+        h3{
+            font-size: 1.8rem;
+        }
+
+        h4{
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: tint($brand-three, 50%);
+        }
+
+        p.with-htb,
+        p.without-htb{
+            font-size: 2rem;
+            margin-top: 0;
+        }
+
+        .with-htb{
+            color: $brand-one;
+        }
+    }
+}
+
+/* HTB Calc Homes In Budget [END]
+------------------------------------------------------------------------------ */

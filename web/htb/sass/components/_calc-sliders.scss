@@ -1,0 +1,120 @@
+/* HTB Calc Sliders
+------------------------------------------------------------------------------ */
+
+.htb-calc{
+
+    .sliders{
+        background-color: $brand-two;
+        border-left: 1px solid $brand-one;
+        border-right: 1px solid $brand-one;
+        position: relative;
+
+        .inset{
+            padding: 2rem 2rem 0 2rem;
+            overflow: auto;
+        }
+
+        label{
+            font-size: 1.6rem;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .field{
+            position: relative;
+
+            &.with-info-bubble{
+
+                label{
+                    padding-right: 35px;
+                }
+            }
+        }
+
+        .field-ranges{
+            padding: 0;
+            overflow: auto;
+            margin-bottom: 2rem;
+
+            li{
+                float: left;
+                list-style-type: none;
+
+                &.min{
+                    width: 28%;
+                    color: $brand-five;
+                    padding-top: 0.5rem;
+                }
+
+                &.value{
+                    width: 44%;
+                    text-align: center;
+                    font-size: 1.6rem;
+                    color: $brand-one;
+                }
+
+                &.max{
+                    width: 28%;
+                    text-align: right;
+                    color: $brand-five;
+                    padding-top: 0.5rem;
+                }
+            }
+        }
+
+        .info-bubble{
+            width: 28px;
+            height: 28px;
+            background-color: $brand-one;
+            display: block;
+            text-align: center;
+            position: absolute;
+            right: 0;
+            top: 0;
+            border-radius: 50%;
+
+            span{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                @include transform(translate(-50%, -50%));
+                color: $brand-two;
+                font-size: 1.6rem;
+            }
+
+            &:hover{
+                background-color: $brand-five;
+            }
+        }
+
+        .ui-widget-content {
+            background: none;
+            background-color: $brand-six;
+            border: none;
+        }
+
+        .ui-slider-horizontal {
+            height: 2px;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .ui-slider{
+
+            .ui-slider-handle{
+                background:url(/htb/images/slider-handle.png) no-repeat; overflow: hidden;
+                margin-left: -20px;
+                position:absolute;
+                border-style:none;
+                width: 37px;
+                height: 37px;
+                top: -18px;
+                left: -18px;
+                outline: none;
+            }
+        }
+    }
+}
+
+/* HTB Calc Sliders [END]
+------------------------------------------------------------------------------ */

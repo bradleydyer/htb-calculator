@@ -118,7 +118,6 @@ htb.controller('SliderCalculatorCtrl', function ($scope) {
         $informationContainer.show();
         jQuery('.info-panel').hide();
         $targetPanel.show();
-        $targetPanel.css('margin-top', ($sourceInfoBubble.parent().position().top) - ($targetPanel.height() * .5));
     }
 
     $scope.hideInformationPanel = function() {
