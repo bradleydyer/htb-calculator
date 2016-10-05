@@ -270,9 +270,6 @@ img {
 ------------------------------------------------------------------------------ */
 /* Slider Calculator Wrapper
 ------------------------------------------------------------------------------ */
-.slider-calculator {
-  width: 260px;
-}
 .slider-calculator .htb-calc {
   position: relative;
 }
