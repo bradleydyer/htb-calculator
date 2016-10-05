@@ -1,0 +1,45 @@
+
+/* Info Panels
+------------------------------------------------------------------------------ */
+
+.information-container {
+    background: rgba(255, 255, 255, .9);
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+}
+
+.info-panel {
+    background-color: $brand-one;
+    padding: 2rem;
+    display: none;
+    text-align: center;
+    position: relative;
+    margin-top: 10rem;
+    box-sizing: border-box;
+}
+
+.info-panel h4 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: $brand-two;
+}
+
+.info-panel p {
+    font-size: 1.3rem;
+    line-height: 1.35;
+    margin-bottom: 2rem;
+    color: tint($brand-one, 85%);
+    font-weight: normal;
+}
+
+.info-panel a.close-panel {
+    font-size: 1.3rem;
+    color: $brand-two;
+    text-decoration: underline;
+}
+
+/* Info Panels [END]
+------------------------------------------------------------------------------ */
