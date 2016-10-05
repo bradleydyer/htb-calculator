@@ -1,0 +1,14 @@
+{
+    "name": "bradleydyer/htb-calculator",
+    "type": "project",
+    "description": "Help To Buy Calculator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kris Rybak",
+            "email": "kris.rybak@bradleydyer.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
