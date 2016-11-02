@@ -10,53 +10,89 @@ htb.directive('sliderCalculator', function(){
         replace: false,
         templateUrl: 'htb/templates/slider-calculator.html',
         link: function(scope, element, attrs) {
-            var $monthlyRepaymentSlider = element.find('.slider.mortgage-monthly-repayment');
-            element.find('.slider.mortgage-deposit').slider({
-                value: scope.deposit,
-                min: 2500,
-                max: 180000,
+            var $monthlyRepaymentNoUiSlider = element.find('.nouislider.mortgage-monthly-repayment')[0];
+            var slider = element.find('.nouislider.mortgage-deposit')[0];
+            noUiSlider.create(slider, {
+                animate: false,
+            	start: scope.deposit,
+            	connect: [true, false],
                 step: 500,
-                slide: function(event, ui) {
-                    scope.deposit = ui.value;
-                    scope.$apply();
-                    $monthlyRepaymentSlider.slider("option","max", scope.maxRepayment);
-                    $monthlyRepaymentSlider.slider("option","value", scope.repayment);
-                    $monthlyRepaymentSlider.slider("option","min", scope.minRepayment);
-                }
+            	range: {
+            		'min': 2500,
+            		'max': 180000
+            	}
             });
-            element.find('.slider.mortgage-interest-rate').slider({
-                value: scope.interestRate,
-                min: 2,
-                max: 5,
+            slider.noUiSlider.on('slide', function(){
+                var value = parseInt(this.get());
+                scope.deposit = value;
+                scope.$apply();
+                $monthlyRepaymentNoUiSlider.noUiSlider.updateOptions({
+                    range: {
+            			'min': scope.minRepayment,
+            			'max': scope.maxRepayment
+            		}
+                });
+                $monthlyRepaymentNoUiSlider.noUiSlider.set(scope.repayment);
+            });
+            var sliderMortgageInterestRate = element.find('.nouislider.mortgage-interest-rate')[0];
+            noUiSlider.create(sliderMortgageInterestRate, {
+                animate: false,
+            	start: scope.interestRate,
+            	connect: [true, false],
                 step: 0.01,
-                slide: function(event, ui) {
-                    scope.interestRate = ui.value;
-                    scope.$apply();
-                    $monthlyRepaymentSlider.slider("option","max", scope.maxRepayment);
-                    $monthlyRepaymentSlider.slider("option","min", scope.minRepayment);
-                }
+            	range: {
+            		'min': 2,
+            		'max': 5
+            	}
             });
-            element.find('.slider.mortgage-length').slider({
-                value: scope.mortgageLenght,
-                min: 25,
-                max: 35,
-                step: 1,
-                slide: function(event, ui) {
-                    scope.mortgageLenght = ui.value;
-                    scope.$apply();
-                    $monthlyRepaymentSlider.slider("option","max", scope.maxRepayment);
-                    $monthlyRepaymentSlider.slider("option","min", scope.minRepayment);
-                }
+            sliderMortgageInterestRate.noUiSlider.on('slide', function(){
+                var value = parseFloat(this.get());
+                scope.interestRate = value;
+                scope.$apply();
+                $monthlyRepaymentNoUiSlider.noUiSlider.updateOptions({
+                    range: {
+            			'min': scope.minRepayment,
+            			'max': scope.maxRepayment
+            		}
+                });
             });
-            element.find('.slider.mortgage-monthly-repayment').slider({
-                value: scope.repayment,
-                min: scope.minRepayment,
-                max: scope.maxRepayment,
+            var slider = element.find('.nouislider.mortgage-length')[0];
+            noUiSlider.create(slider, {
+                animate: false,
+            	start: scope.mortgageLenght,
+            	connect: [true, false],
                 step: 1,
-                slide: function(event, ui) {
-                    scope.repayment = ui.value;
-                    scope.$apply();
-                }
+            	range: {
+            		'min': 25,
+            		'max': 35
+            	}
+            });
+            slider.noUiSlider.on('slide', function(){
+                var value = parseInt(this.get());
+                scope.mortgageLenght = value;
+                scope.$apply();
+                $monthlyRepaymentNoUiSlider.noUiSlider.updateOptions({
+                    range: {
+            			'min': scope.minRepayment,
+            			'max': scope.maxRepayment
+            		}
+                });
+            });
+            var slider = element.find('.nouislider.mortgage-monthly-repayment')[0];
+            noUiSlider.create(slider, {
+                animate: false,
+            	start: scope.repayment,
+            	connect: [true, false],
+                step: 1,
+            	range: {
+            		'min': scope.minRepayment,
+            		'max': scope.maxRepayment
+            	}
+            });
+            slider.noUiSlider.on('slide', function(){
+                var value = parseInt(this.get());
+                scope.repayment = value;
+                scope.$apply();
             });
             element.find('.info-bubble').bind('click', function() {
                 var $targetPanel = jQuery('.' + jQuery(this).data('info-target') );

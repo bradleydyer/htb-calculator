@@ -13,7 +13,12 @@ Install node modules:
 npm install
 ```
 
-Minify the code:
+Minify javascript code:
 ```
-gulp js
+gulp minify-js
+```
+
+Minify css:
+```
+gulp minify-css
 ```

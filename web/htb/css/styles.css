@@ -92,6 +92,44 @@ img {
 
 /* HTB Calc Homes In Budget [END]
 ------------------------------------------------------------------------------ */
+/* HTB noUISliders Specific
+------------------------------------------------------------------------------ */
+.htb-calc .nouislider {
+  margin-bottom: 15px;
+}
+.htb-calc .noUi-handle {
+  background: url(/htb/images/slider-handle.png) no-repeat;
+  overflow: hidden;
+  border: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+.htb-calc .noUi-handle:after, .htb-calc .noUi-handle:before {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+.htb-calc .noUi-horizontal .noUi-handle {
+  width: 37px;
+  height: 37px;
+  left: -19px;
+  top: -16px;
+}
+.htb-calc .noUi-connect {
+  background: transparent;
+}
+.htb-calc .noUi-horizontal {
+  height: 2px;
+}
+.htb-calc .noUi-base {
+  background-color: #cbcbcb;
+}
+.htb-calc .noUi-target {
+  border: 0;
+}
+
+/* HTB noUISliders Specific [END]
+------------------------------------------------------------------------------ */
 /* HTB Calc Results
 ------------------------------------------------------------------------------ */
 .htb-calc .results {
@@ -199,28 +237,6 @@ img {
 }
 .htb-calc .sliders .info-bubble:hover {
   background-color: #505050;
-}
-.htb-calc .sliders .ui-widget-content {
-  background: none;
-  background-color: #cbcbcb;
-  border: none;
-}
-.htb-calc .sliders .ui-slider-horizontal {
-  height: 2px;
-  position: relative;
-  margin-bottom: 2rem;
-}
-.htb-calc .sliders .ui-slider .ui-slider-handle {
-  background: url(/htb/images/slider-handle.png) no-repeat;
-  overflow: hidden;
-  margin-left: -20px;
-  position: absolute;
-  border-style: none;
-  width: 37px;
-  height: 37px;
-  top: -18px;
-  left: -18px;
-  outline: none;
 }
 
 /* HTB Calc Sliders [END]
