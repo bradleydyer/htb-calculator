@@ -11,39 +11,36 @@
                 <div class="field with-info-bubble">
                     <label for="input-deposit">How much deposit do you have (&pound;)?</label>
                     <a href="javascript:;" class="info-bubble" alt="More information icon" data-info-target="information-deposit"><span>i</span></a>
-                    <div class="slider mortgage-deposit"></div>
+                    <div class="nouislider mortgage-deposit"></div>
                     <ul class="field-ranges">
                         <li class="min">Min. &pound;2.5k</li>
                         <li class="value">&pound;{{ deposit | number:0 }}</li>
                         <li class="max">Max. &pound;180k</li>
                     </ul>
                 </div>
-
                 <div class="field with-info-bubble">
                     <label>What is your mortage interest rate (%)?</label>
                     <a href="javascript:;" class="info-bubble" alt="More information icon" data-info-target="information-mortgage-rate"><span>i</span></a>
-                    <div class="slider mortgage-interest-rate"></div>
+                    <div class="nouislider mortgage-interest-rate"></div>
                     <ul class="field-ranges">
                         <li class="min">Min. 2.00%</li>
                         <li class="value">{{ interestRate }}%</li>
                         <li class="max">Max. 5.00%</li>
                     </ul>
                 </div>
-
                 <div class="field">
                     <label>What is the length of your mortgage (years)?</label>
-                    <div class="slider mortgage-length"></div>
+                    <div class="nouislider mortgage-length"></div>
                     <ul class="field-ranges">
                         <li class="min">Min. 25 yrs</li>
                         <li class="value">{{ mortgageLenght }} years</li>
                         <li class="max">Max. 35 yrs</li>
                     </ul>
                 </div>
-
                 <div class="field with-info-bubble">
                     <label>How much do you want to repay each month (&pound;)?</label>
                     <a href="javascript:;" class="info-bubble" alt="More information icon" data-info-target="information-repay"><span>i</span></a>
-                    <div class="slider mortgage-monthly-repayment"></div>
+                    <div class="nouislider mortgage-monthly-repayment"></div>
                     <ul class="field-ranges">
                         <li class="min">Min. &pound;{{ minRepayment }}</li>
                         <li class="value">&pound;{{ repayment | number:0 }}</li>
