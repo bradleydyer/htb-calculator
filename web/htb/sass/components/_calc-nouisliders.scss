@@ -1,0 +1,50 @@
+/* HTB noUISliders Specific
+------------------------------------------------------------------------------ */
+
+.htb-calc{
+
+    .nouislider {
+        margin-bottom: 15px;
+    }
+
+    .noUi-handle {
+        background:url(/htb/images/slider-handle.png) no-repeat; overflow: hidden;
+        border: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .noUi-handle:after, .noUi-handle:before {
+        width: 0;
+        height: 0;
+        background: transparent;
+    }
+
+    .noUi-horizontal .noUi-handle {
+        width: 37px;
+        height: 37px;
+        left: -19px;
+        top: -16px;
+    }
+
+    .noUi-connect {
+        background: transparent;
+    }
+
+    .noUi-horizontal {
+        height: 2px;
+    }
+
+    .noUi-base {
+        background-color: #cbcbcb;
+
+    }
+
+    .noUi-target {
+        border: 0;
+    }
+
+}
+
+/* HTB noUISliders Specific [END]
+------------------------------------------------------------------------------ */
