@@ -87,32 +87,6 @@
             }
         }
 
-        .ui-widget-content {
-            background: none;
-            background-color: $brand-six;
-            border: none;
-        }
-
-        .ui-slider-horizontal {
-            height: 2px;
-            position: relative;
-            margin-bottom: 2rem;
-        }
-
-        .ui-slider{
-
-            .ui-slider-handle{
-                background:url(/htb/images/slider-handle.png) no-repeat; overflow: hidden;
-                margin-left: -20px;
-                position:absolute;
-                border-style:none;
-                width: 37px;
-                height: 37px;
-                top: -18px;
-                left: -18px;
-                outline: none;
-            }
-        }
     }
 }
 
