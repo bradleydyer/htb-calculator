@@ -1,0 +1,23 @@
+/* extra extra small devices */
+$xxxs: max-width 320px;
+
+/* extra small devices */
+$xxs: max-width 480px;
+
+/* small tablet and mobile */
+$xs: max-width 767px;
+
+/* small desktop */
+$sm: 768px 991px;
+
+/* large desktop */
+$lg: min-width 1200px;
+
+/* extra large devices */
+$xl: min-width 1890px;
+
+/* vertical layout adapt tall */
+$vert-adapt-tall: max-height 1000px;
+
+/* vertical layout adapt short */
+$vert-adapt-short: max-height 750px;

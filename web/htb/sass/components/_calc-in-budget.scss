@@ -4,22 +4,19 @@
 .htb-calc{
 
     .homes-in-budget{
-        background-color: #fff;
         text-align: center;
-        border-left: 1px solid $brand-one;
-        border-right: 1px solid $brand-one;
-        border-bottom: 1px solid $brand-one;
+        padding: 2rem 0;
 
         .inset{
             padding: 2rem 2rem 1rem;
         }
 
-        h3{
-            font-size: 1.8rem;
+        h4{
+            font-size: 1.4rem;
         }
 
-        h4{
-            font-size: 1.2rem;
+        h5{
+            font-size: 1.4rem;
             margin-bottom: 0.5rem;
             color: tint($brand-three, 50%);
         }
@@ -28,10 +25,16 @@
         p.without-htb{
             font-size: 2rem;
             margin-top: 0;
+            font-weight: bold;
+            color: $brand-three;
         }
 
-        .with-htb{
+        p.with-htb{
             color: $brand-one;
+
+            @include breakpoint($xs){
+                margin-bottom: 1.5rem;
+            }
         }
     }
 }

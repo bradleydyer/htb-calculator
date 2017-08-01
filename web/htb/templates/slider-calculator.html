@@ -1,98 +1,114 @@
-<div>
-    <div class="htb-calc">
-        <div class="header">
-            <div class="inset">
-                <img ng-src="{{ imagePath }}/help-to-buy-logo.png" class="logo" alt="Help to Buy logo" />
-                <h3>Help to Buy Calculator</h3>
-            </div>
-        </div>
-        <div class="sliders">
-            <div class="inset">
-                <div class="field with-info-bubble">
-                    <label for="input-deposit">How much deposit do you have (&pound;)?</label>
-                    <a href="javascript:;" class="info-bubble" alt="More information icon" data-info-target="information-deposit"><span>i</span></a>
-                    <div class="nouislider mortgage-deposit"></div>
-                    <ul class="field-ranges">
-                        <li class="min">Min. &pound;2.5k</li>
-                        <li class="value">&pound;{{ deposit | number:0 }}</li>
-                        <li class="max">Max. &pound;180k</li>
-                    </ul>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <h4>Siteplan</h4>
+            <div class="htb-calc">
+                <h4>Help to Buy Calculator</h4>
+                <img ng-src="{{ imagePath }}/help-to-buy-roundall.svg" class="logo" alt="Help to Buy logo" />
+                <div class="row">
+                    <div class="col-sm-6 sliders">
+                        <div class="field with-info-bubble">
+                            <label for="input-deposit">How much deposit do you have (&pound;)?</label>
+                            <a href="javascript:;" class="info-bubble" alt="More information icon" data-info-target="information-deposit"><span>i</span></a>
+                            <div class="nouislider mortgage-deposit"></div>
+                            <ul class="field-ranges">
+                                <li class="min">Min. &pound;2.5k</li>
+                                <li class="value">&pound;{{ deposit | number:0 }}</li>
+                                <li class="max">Max. &pound;180k</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 sliders">
+                        <div class="field with-info-bubble">
+                            <label>What is your mortage interest rate (%)?</label>
+                            <a href="javascript:;" class="info-bubble" alt="More information icon" data-info-target="information-mortgage-rate"><span>i</span></a>
+                            <div class="nouislider mortgage-interest-rate"></div>
+                            <ul class="field-ranges">
+                                <li class="min">Min. 2.00%</li>
+                                <li class="value">{{ interestRate }}%</li>
+                                <li class="max">Max. 5.00%</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 sliders">
+                        <div class="field">
+                            <label>What is the length of your mortgage <br class="visible-md">(years)?</label>
+                            <div class="nouislider mortgage-length"></div>
+                            <ul class="field-ranges">
+                                <li class="min">Min. 25 yrs</li>
+                                <li class="value">{{ mortgageLenght }} years</li>
+                                <li class="max">Max. 35 yrs</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 sliders">
+                        <div class="field with-info-bubble">
+                            <label>How much do you want to repay each month (&pound;)?</label>
+                            <a href="javascript:;" class="info-bubble" alt="More information icon" data-info-target="information-repay"><span>i</span></a>
+                            <div class="nouislider mortgage-monthly-repayment"></div>
+                            <ul class="field-ranges">
+                                <li class="min">Min. &pound;{{ minRepayment }}</li>
+                                <li class="value">&pound;{{ repayment | number:0 }}</li>
+                                <li class="max">Max. &pound;{{ maxRepayment }}</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="field with-info-bubble">
-                    <label>What is your mortage interest rate (%)?</label>
-                    <a href="javascript:;" class="info-bubble" alt="More information icon" data-info-target="information-mortgage-rate"><span>i</span></a>
-                    <div class="nouislider mortgage-interest-rate"></div>
-                    <ul class="field-ranges">
-                        <li class="min">Min. 2.00%</li>
-                        <li class="value">{{ interestRate }}%</li>
-                        <li class="max">Max. 5.00%</li>
-                    </ul>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="results">
+                            <h4>Your results</h4>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <h5>Your deposit</h5>
+                                    <p class="result deposit"><span class="value">&pound;{{ deposit | number:0 }}</span> / <span class="percentage">{{ getDepositAsPercentage() }}%</span></p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h5>Help to Buy <br class="visible-sm">London loan</h5>
+                                    <p class="result htb-loan"><span class="value">&pound;{{ equityLoan | number:0 }}</span> / <span class="percentage">{{ getEquityLoanAsPercentage() }}</span>%</p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h5>Your mortgage</h5>
+                                    <p class="result mortage"><span class="value">&pound;{{ principal | number:0 }}</span> / <span class="percentage">{{ getPrincipalAsPercentage() }}</span>%</p>
+                                </div>
+                                <div class="col-sm-12">
+                                <p class="problem" ng-if="getDepositAsPercentage() < 5">Your deposit has to be a minimum of 5% for HtB. Please alter your deposit amount or monthly payments.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="field">
-                    <label>What is the length of your mortgage (years)?</label>
-                    <div class="nouislider mortgage-length"></div>
-                    <ul class="field-ranges">
-                        <li class="min">Min. 25 yrs</li>
-                        <li class="value">{{ mortgageLenght }} years</li>
-                        <li class="max">Max. 35 yrs</li>
-                    </ul>
-                </div>
-                <div class="field with-info-bubble">
-                    <label>How much do you want to repay each month (&pound;)?</label>
-                    <a href="javascript:;" class="info-bubble" alt="More information icon" data-info-target="information-repay"><span>i</span></a>
-                    <div class="nouislider mortgage-monthly-repayment"></div>
-                    <ul class="field-ranges">
-                        <li class="min">Min. &pound;{{ minRepayment }}</li>
-                        <li class="value">&pound;{{ repayment | number:0 }}</li>
-                        <li class="max">Max. &pound;{{ maxRepayment }}</li>
-                    </ul>
+                <div class="row homes-in-budget">
+                    <h4>Homes within your budget</h4>
+                    <div class="col-sm-6">
+                        <h5 class="with-htb">With Help to Buy London</h5>
+                        <p class="with-htb">&pound;{{ ( getTotalWithHelpToBuy() >= marginalCorrection ? maxTotal : getTotalWithHelpToBuy() ) | number:0 }}</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <h5 class="without-htb">Without Help to Buy London</h5>
+                        <p class="without-htb">&pound; {{ getTotalWithoutHelpToBuy() | number:0 }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="results">
-            <div class="inset">
-                <h3>Your results</h3>
-                <p class="problem" ng-if="getDepositAsPercentage() < 5">Your deposit has to be a minimum of 5% for HtB. Please alter your deposit amount or monthly payments.</p>
+            <div class="information-container">
+                <div class="info-panel information-deposit">
+                    <h4>Deposit</h4>
+                    <p>Adjust the slider to the amount of deposit you have available. This calculator assumes that the minimum allowable deposit on a 'with Help to Buy mortgage is 5% and the maximum allowable deposit is 30%. This calculator also assumes that the minimum deposit for a 'without Help to Buy' mortgage is 15%. </p>
+                    <a href="#" class="close-panel">Close</a>
+                </div>
 
-                <h4>Your deposit</h4>
-                <p class="result deposit"><span class="value">&pound;{{ deposit | number:0 }}</span> / <span class="percentage">{{ getDepositAsPercentage() }}%</span></p>
+                <div class="info-panel information-mortgage-rate">
+                    <h4>Mortgage Rate</h4>
+                    <p>Mortgage interest rates are set by mortgage providers and will depend on a number of factors such as your deposit value, the value of the property and your financial circumstances. As a guide, as of September 2013 most mortgage rates are between 3% and 6%. This calculator works on the basis of a capital and interest repayment mortgage, with interest calculated monthly. </p>
+                    <a href="#" class="close-panel">Close</a>
+                </div>
 
-                <h4>Help to Buy London loan</h4>
-                <p class="result htb-loan"><span class="value">&pound;{{ equityLoan | number:0 }}</span> / <span class="percentage">{{ getEquityLoanAsPercentage() }}</span>%</p>
-
-                <h4>Your mortgage</h4>
-                <p class="result mortage"><span class="value">&pound;{{ principal | number:0 }}</span> / <span class="percentage">{{ getPrincipalAsPercentage() }}</span>%</p>
-            </div>
-        </div>
-
-        <div class="homes-in-budget key-line">
-            <div class="inset">
-                <h3>Homes within your budget</h3>
-                <h4 class="with-htb">With Help to Buy London</h4>
-                <p class="with-htb">&pound;{{ ( getTotalWithHelpToBuy() >= marginalCorrection ? maxTotal : getTotalWithHelpToBuy() ) | number:0 }}</p>
-                <h4 class="without-htb">Without Help to Buy London</h4>
-                <p class="without-htb">&pound; {{ getTotalWithoutHelpToBuy() | number:0 }}</p>
-            </div>
-        </div>
-
-        <div class="information-container">
-            <div class="info-panel information-deposit">
-                <h4>Deposit</h4>
-                <p>Adjust the slider to the amount of deposit you have available. This calculator assumes that the minimum allowable deposit on a 'with Help to Buy mortgage is 5% and the maximum allowable deposit is 30%. This calculator also assumes that the minimum deposit for a 'without Help to Buy' mortgage is 15%. </p>
-                <a href="#" class="close-panel">Close</a>
-            </div>
-
-            <div class="info-panel information-mortgage-rate">
-                <h4>Mortgage Rate</h4>
-                <p>Mortgage interest rates are set by mortgage providers and will depend on a number of factors such as your deposit value, the value of the property and your financial circumstances. As a guide, as of September 2013 most mortgage rates are between 3% and 6%. This calculator works on the basis of a capital and interest repayment mortgage, with interest calculated monthly. </p>
-                <a href="#" class="close-panel">Close</a>
-            </div>
-
-            <div class="info-panel information-repay">
-                <h4>Repay</h4>
-                <p>Adjust the slider to the amount you might expect to be able to repay on your mortgage each month. The results will include your other settings, including your mortgage amount, length of the mortgage term and interest rate. Note that this amount does not include the interest repayable to the Government on your Help to Buy equity loan from year 5 onwards.</p>
-                <a href="#" class="close-panel">Close</a>
+                <div class="info-panel information-repay">
+                    <h4>Repay</h4>
+                    <p>Adjust the slider to the amount you might expect to be able to repay on your mortgage each month. The results will include your other settings, including your mortgage amount, length of the mortgage term and interest rate. Note that this amount does not include the interest repayable to the Government on your Help to Buy equity loan from year 5 onwards.</p>
+                    <a href="#" class="close-panel">Close</a>
+                </div>
             </div>
         </div>
     </div>

@@ -3,24 +3,10 @@
 
 .htb-calc{
 
-    .header{
-        background-color: $brand-one;
-        text-align: center;
-
-        .inset{
-            padding: 2rem;
-        }
-
-        .logo{
-            max-width: 111px;
-            margin-bottom: 1.5rem;
-        }
-
-        h3{
-            font-size: 1.6rem;
-            color: $brand-two;
-            margin-bottom: 0;
-        }
+    .logo{
+        width: 84px;
+        max-width: 100%;
+        margin-bottom: 2rem;
     }
 }
 
