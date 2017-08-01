@@ -17,7 +17,7 @@
             display: inline-block;
             margin-bottom: 2.5rem;
             font-weight: normal;
-            color: $brand-three;
+            color: rgba($brand-three, 0.8);
         }
 
         .field{
@@ -52,7 +52,7 @@
                     text-align: center;
                     font-size: 1.6rem;
                     color: $brand-three;
-                    font-weight: bold;
+                    font-family: 'Helvetica Neue LT W01_71488914', sans-serif;
                 }
 
                 &.max{
@@ -74,6 +74,9 @@
             right: 0;
             top: 0;
             border-radius: 50%;
+            @include transition-property(background-color);
+            @include transition-duration(0.2s);
+            @include transition-timing-function(ease);
 
             span{
                 position: absolute;
@@ -81,11 +84,12 @@
                 left: 50%;
                 @include transform(translate(-50%, -50%));
                 color: $brand-two;
-                font-size: 1.6rem;
+                font-size: 1.3rem;
+                font-family: 'fontawesome';
             }
 
             &:hover{
-                background-color: $brand-five;
+                background-color: $brand-one;
             }
         }
 

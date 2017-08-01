@@ -1,0 +1,5 @@
+@mixin font-smoothing($webkit-smoothing: antialiased, $alpha: 0.004, $moz-smoothing: grayscale) {
+    -webkit-font-smoothing: $webkit-smoothing;
+    text-shadow: 1px 1px 1px rgba(0,0,0,$alpha);
+    -moz-osx-font-smoothing: $moz-smoothing;
+}

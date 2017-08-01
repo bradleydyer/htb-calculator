@@ -9,7 +9,7 @@
                     <div class="col-sm-6 sliders">
                         <div class="field with-info-bubble">
                             <label for="input-deposit">How much deposit do you have (&pound;)?</label>
-                            <a href="javascript:;" class="info-bubble" alt="More information icon" data-info-target="information-deposit"><span>i</span></a>
+                            <a href="javascript:;" class="info-bubble" alt="More information icon" data-info-target="information-deposit"><span><i class="fa fa-info" aria-hidden="true"></i></span></a>
                             <div class="nouislider mortgage-deposit"></div>
                             <ul class="field-ranges">
                                 <li class="min">Min. &pound;2.5k</li>
@@ -21,7 +21,7 @@
                     <div class="col-sm-6 sliders">
                         <div class="field with-info-bubble">
                             <label>What is your mortage interest rate (%)?</label>
-                            <a href="javascript:;" class="info-bubble" alt="More information icon" data-info-target="information-mortgage-rate"><span>i</span></a>
+                            <a href="javascript:;" class="info-bubble" alt="More information icon" data-info-target="information-mortgage-rate"><span><i class="fa fa-info" aria-hidden="true"></i></span></a>
                             <div class="nouislider mortgage-interest-rate"></div>
                             <ul class="field-ranges">
                                 <li class="min">Min. 2.00%</li>
@@ -44,7 +44,7 @@
                     <div class="col-sm-6 sliders">
                         <div class="field with-info-bubble">
                             <label>How much do you want to repay each month (&pound;)?</label>
-                            <a href="javascript:;" class="info-bubble" alt="More information icon" data-info-target="information-repay"><span>i</span></a>
+                            <a href="javascript:;" class="info-bubble" alt="More information icon" data-info-target="information-repay"><span><i class="fa fa-info" aria-hidden="true"></i></span></a>
                             <div class="nouislider mortgage-monthly-repayment"></div>
                             <ul class="field-ranges">
                                 <li class="min">Min. &pound;{{ minRepayment }}</li>
@@ -86,7 +86,7 @@
                     </div>
                     <div class="col-sm-6">
                         <h5 class="without-htb">Without Help to Buy London</h5>
-                        <p class="without-htb">&pound; {{ getTotalWithoutHelpToBuy() | number:0 }}</p>
+                        <p class="without-htb">&pound;{{ getTotalWithoutHelpToBuy() | number:0 }}</p>
                     </div>
                 </div>
             </div>

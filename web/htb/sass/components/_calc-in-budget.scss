@@ -19,14 +19,15 @@
             font-size: 1.4rem;
             margin-bottom: 0.5rem;
             color: tint($brand-three, 50%);
+            font-family: 'Helvetica Neue LT W01_55 Roman', sans-serif;
         }
 
         p.with-htb,
         p.without-htb{
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-top: 0;
-            font-weight: bold;
             color: $brand-three;
+            font-family: 'Helvetica Neue LT W01_71488914', sans-serif;
         }
 
         p.with-htb{
