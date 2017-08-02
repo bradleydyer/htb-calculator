@@ -9,7 +9,7 @@ htb.directive('sliderCalculator', function($templateRequest, $compile){
         restrict : 'C',
         link: function(scope, element, attrs) {
             // Get default template
-            var templatePath = 'htb/templates/slider-calculator.html';
+            var templatePath = 'htb/htb/templates/slider-calculator.html';
 
             // Use custom template if specified
             if (attrs.templatePath) {
